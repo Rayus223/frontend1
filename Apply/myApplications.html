@@ -11,7 +11,7 @@
       gtag('config', 'G-DXKBVVB6PF');
     </script>
 
-    <script src="../config.js"></script>
+    
 
 
     <meta charset="UTF-8">
@@ -279,7 +279,7 @@
         async function loadApplications() {
             try {
                 const token = localStorage.getItem('token');
-                const response = await fetch(`${API_BASE_URL}/api/teacher-apply/my-applications`, {
+                const response = await fetch(`https://api.dearsirhometuition.com/api/teacher-apply/my-applications`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
