@@ -11,7 +11,7 @@
       gtag('config', 'G-DXKBVVB6PF');
     </script>
 
-<script src="../config.js"></script>
+
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -314,7 +314,7 @@ function shouldDisplayVacancy(vacancy) {
 async function loadVacancies() {
     const token = localStorage.getItem('token');
     try {
-        const response = await fetch(`${API_BASE_URL}/api/teacher-apply/available-vacancies`, {
+        const response = await fetch(`https://api.dearsirhometuition.com/api/teacher-apply/available-vacancies`, {
             headers: {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json'
@@ -410,7 +410,7 @@ async function applyForVacancy(vacancyId) {
 
     const token = localStorage.getItem('token');
     try {
-        const response = await fetch(`http://localhost:5000/api/teacher-apply/apply-vacancy/${vacancyId}`, {  // Updated endpoint
+        const response = await fetch(`https://api.dearsirhometuition.com/api/teacher-apply/apply-vacancy/${vacancyId}`, {  // Updated endpoint
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,
