@@ -409,7 +409,7 @@
 
         try {
             // First check if user is registered
-            const checkResponse = await fetch(`${API_BASE_URL}/api/teacher-apply/check-registration?email=${email}`);
+            const checkResponse = await fetch(`https://api.dearsirhometuition.com/api/teacher-apply/check-registration?email=${email}`);
             const checkData = await checkResponse.json();
 
             if (!checkData.isRegistered) {
@@ -419,7 +419,7 @@
             }
 
             // Proceed with login if registered
-            const loginResponse = await fetch(`${API_BASE_URL}/api/teacher-apply/login`, {
+            const loginResponse = await fetch(`https://api.dearsirhometuition.com/api/teacher-apply/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -462,7 +462,7 @@
 
         try {
             // Check if user is registered before sending reset link
-            const checkResponse = await fetch(`${API_BASE_URL}/api/teacher-apply/check-registration?email=${resetEmail}`);
+            const checkResponse = await fetch(`https://api.dearsirhometuition.com/api/teacher-apply/check-registration?email=${resetEmail}`);
             const checkData = await checkResponse.json();
 
             if (!checkData.isRegistered) {
