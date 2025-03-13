@@ -308,7 +308,7 @@
     <meta property="og:title" content="SEE परीक्षामा नेपाली विषयमा A+ ल्याउने टिप्स" />
     <meta property="og:description" content="SEE परीक्षामा नेपाली विषयमा उच्च अंक प्राप्त गर्ने सम्पूर्ण मार्गदर्शन। व्याकरण, निबन्ध, पत्र, कविता, कथा र उपन्यास सम्बन्धी महत्त्वपूर्ण टिप्स र ट्रिक्स।" />
     <meta property="og:image" content="https://dearsirhometuition.com/Notes/Nepali1.jpg" />
-    <meta property="og:url" content="https://dearsirhometuition.com/Notes/view-pdf.html" />
+    <meta property="og:url" content="https://dearsirhometuition.com/Notes/view-pdf.html?file=Nepali1.pdf" />
 </head>
 <body class="body">
     <!-- Navbar -->
@@ -544,8 +544,14 @@
         };
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Make sure this path is correct relative to view-pdf.html
-            loadPDF('Nepali1.pdf');
+            const urlParams = new URLSearchParams(window.location.search);
+            const pdfFile = urlParams.get('file');
+            
+            if (pdfFile) {
+                loadPDF(pdfFile);
+            } else {
+                window.location.href = '../notes.html';
+            }
         });
 
         function scrollToNotes() {
